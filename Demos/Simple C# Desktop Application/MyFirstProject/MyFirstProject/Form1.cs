@@ -14,7 +14,7 @@ namespace MyFirstProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            String text = textBox1.Text;
         }
     }
 }
