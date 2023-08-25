@@ -325,6 +325,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Econtact";
             this.Text = "Econtact";
+            this.Load += new System.EventHandler(this.Econtact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
