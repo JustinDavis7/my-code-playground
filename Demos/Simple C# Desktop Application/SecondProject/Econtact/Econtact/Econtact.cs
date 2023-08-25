@@ -1,8 +1,8 @@
 namespace Econtact
 {
-    public partial class Form1 : Form
+    public partial class Econtact : Form
     {
-        public Form1()
+        public Econtact()
         {
             InitializeComponent();
         }
