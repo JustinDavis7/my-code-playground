@@ -73,7 +73,6 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
-.vs/*
-Demos/Simple C# Desktop Application/MyFirstProject/.vs/*
-Demos/Simple C# Desktop Application/SecondProject/Econtact/.vs/*
+**/.vs/*
+
 
