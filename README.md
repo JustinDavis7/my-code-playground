@@ -31,6 +31,6 @@
         I'm starting off with two small desktop applicaions that I will be following some video tutorials on, so initially there wont be much here to look at.
     </li>
     <li>
-        After that, I'm possibly going to be working on a polling application - more on that in file it falls into.
+        After that, I'm possibly going to be working on a raffle application - more on that in the file it falls into.
     </li>
 <ul>
