@@ -91,5 +91,52 @@ namespace Econtact
             txtboxAddress.Text = "";
             cmbGender.Text = "";
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //Get the Data from textboxes
+            c.ContactID = int.Parse(txtboxContactID.Text);
+            c.FirstName = txtboxFirstName.Text;
+            c.LastName = txtboxLastName.Text;
+            c.ContactNo = txtboxContactNumber.Text;
+            c.Address = txtboxAddress.Text;
+            c.Gender = cmbGender.Text;
+            //Update Data in Database
+            bool success = c.Update(c);
+            if(success)
+            {
+                //Updated Successfully
+                MessageBox.Show("Contact Updated Successfully!"); 
+                //Load Data on Data Gridview
+                DataTable dt = c.Select();
+                dgvContactList.DataSource = dt;
+                //Call the Clear Method Here
+                Clear();
+            }
+            else
+            {
+                //Failed to Update Contact
+                MessageBox.Show("Failed to Update Contact. Try Again.");
+            }
+        }
+
+        private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Get the Data From Data Grid View and Load it to the textboxes respectively
+            //identify the row on which mouse is clicked
+            int rowIndex = e.RowIndex;
+            txtboxContactID.Text = dgvContactList.Rows[rowIndex].Cells[0].Value.ToString();
+            txtboxFirstName.Text = dgvContactList.Rows[rowIndex].Cells[1].Value.ToString();
+            txtboxLastName.Text = dgvContactList.Rows[rowIndex].Cells[2].Value.ToString();
+            txtboxContactNumber.Text = dgvContactList.Rows[rowIndex].Cells[3].Value.ToString();
+            txtboxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
+            cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //Call the Clear Method Here
+            Clear();
+        }
     }
 }
