@@ -90,33 +90,37 @@ namespace Econtact
             txtboxContactNumber.Text = "";
             txtboxAddress.Text = "";
             cmbGender.Text = "";
+            txtboxContactID.Text = "";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Get the Data from textboxes
-            c.ContactID = int.Parse(txtboxContactID.Text);
-            c.FirstName = txtboxFirstName.Text;
-            c.LastName = txtboxLastName.Text;
-            c.ContactNo = txtboxContactNumber.Text;
-            c.Address = txtboxAddress.Text;
-            c.Gender = cmbGender.Text;
-            //Update Data in Database
-            bool success = c.Update(c);
-            if(success)
+            if (txtboxContactID.Text != "")
             {
-                //Updated Successfully
-                MessageBox.Show("Contact Updated Successfully!"); 
-                //Load Data on Data Gridview
-                DataTable dt = c.Select();
-                dgvContactList.DataSource = dt;
-                //Call the Clear Method Here
-                Clear();
-            }
-            else
-            {
-                //Failed to Update Contact
-                MessageBox.Show("Failed to Update Contact. Try Again.");
+                c.ContactID = int.Parse(txtboxContactID.Text);
+                c.FirstName = txtboxFirstName.Text;
+                c.LastName = txtboxLastName.Text;
+                c.ContactNo = txtboxContactNumber.Text;
+                c.Address = txtboxAddress.Text;
+                c.Gender = cmbGender.Text;
+                //Update Data in Database
+                bool success = c.Update(c);
+                if (success)
+                {
+                    //Updated Successfully
+                    MessageBox.Show("Contact Updated Successfully!");
+                    //Load Data on Data Gridview
+                    DataTable dt = c.Select();
+                    dgvContactList.DataSource = dt;
+                    //Call the Clear Method Here
+                    Clear();
+                }
+                else
+                {
+                    //Failed to Update Contact
+                    MessageBox.Show("Failed to Update Contact. Try Again.");
+                }
             }
         }
 
@@ -141,23 +145,26 @@ namespace Econtact
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //Get Data from the Textboxes
-            c.ContactID = Convert.ToInt32(txtboxContactID.Text);
-            bool success = c.Delete(c);
-            if (success)
+            if (txtboxContactID.Text != "")
             {
-                //Delete Successfully
-                MessageBox.Show("Contact Deleted Successfully!");
-                //Load Data on Data Gridview
-                DataTable dt = c.Select();
-                dgvContactList.DataSource = dt;
-                //Call the Clear Method Here
-                Clear();
-            }
-            else
-            {
-                //Failed to Update Contact
-                MessageBox.Show("Failed to Delete Contact. Try Again.");
+                //Get Data from the Textboxes
+                c.ContactID = Convert.ToInt32(txtboxContactID.Text);
+                bool success = c.Delete(c);
+                if (success)
+                {
+                    //Delete Successfully
+                    MessageBox.Show("Contact Deleted Successfully!");
+                    //Load Data on Data Gridview
+                    DataTable dt = c.Select();
+                    dgvContactList.DataSource = dt;
+                    //Call the Clear Method Here
+                    Clear();
+                }
+                else
+                {
+                    //Failed to Update Contact
+                    MessageBox.Show("Failed to Delete Contact. Try Again.");
+                }
             }
         }
     }
