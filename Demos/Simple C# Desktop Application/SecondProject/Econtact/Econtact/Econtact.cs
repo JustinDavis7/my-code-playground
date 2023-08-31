@@ -19,30 +19,37 @@ namespace Econtact
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //Get the value from the input fields
-            c.FirstName = txtboxFirstName.Text;
-            c.LastName = txtboxLastName.Text;
-            c.ContactNo = txtboxContactNumber.Text;
-            c.Address = txtboxAddress.Text;
-            c.Gender = cmbGender.Text;
-
-            //Inserting Data into Database using the method we created in previous episode
-            bool success = c.Insert(c);
-            if (success)
+            if (txtboxFirstName.Text != "" && txtboxLastName.Text != "" && txtboxContactNumber.Text != "" && txtboxAddress.Text != "" && txtboxAddress.Text != "")
             {
-                //Successfully Inserted
-                MessageBox.Show("New Contact Successfully Added!");
-                //Call the Clear Method Here
-                Clear();
+                //Get the value from the input fields
+                c.FirstName = txtboxFirstName.Text;
+                c.LastName = txtboxLastName.Text;
+                c.ContactNo = txtboxContactNumber.Text;
+                c.Address = txtboxAddress.Text;
+                c.Gender = txtboxAddress.Text;
+
+                //Inserting Data into Database using the method we created in previous episode
+                bool success = c.Insert(c);
+                if (success)
+                {
+                    //Successfully Inserted
+                    MessageBox.Show("New Contact Successfully Added!");
+                    //Call the Clear Method Here
+                    Clear();
+                }
+                else
+                {
+                    //Failed to Add Contact
+                    MessageBox.Show("Failed to add New Contact. Try Again.");
+                }
+                //Load Data on Data Gridview
+                DataTable dt = c.Select();
+                dgvContactList.DataSource = dt;
             }
             else
             {
-                //Failed to Add Contact
-                MessageBox.Show("Failed to add New Contact. Try Again.");
+                MessageBox.Show("One or more data fields are empty! Please check to make sure you filled out every box except for Contact ID.");
             }
-            //Load Data on Data Gridview
-            DataTable dt = c.Select();
-            dgvContactList.DataSource = dt;
         }
         private void Econtact_Load(object sender, EventArgs e)
         {
