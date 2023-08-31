@@ -64,7 +64,7 @@ namespace Econtact.econtactClasses
             try
             {
                 //Step 2: Create SQL Query to insert Data
-                string sql = "INSERT INTO  tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES (@FirstName, @LastName, @ConttactNo, @Address, @Gender)";
+                string sql = "INSERT INTO  tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES (@FirstName, @LastName, @ContactNo, @Address, @Gender)";
                 //Creating SQL Command using sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //Create Parameters to add data

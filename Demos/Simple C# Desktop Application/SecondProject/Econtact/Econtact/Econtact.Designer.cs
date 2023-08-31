@@ -268,6 +268,7 @@
             this.txtboxContactID.Location = new System.Drawing.Point(324, 146);
             this.txtboxContactID.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxContactID.Name = "txtboxContactID";
+            this.txtboxContactID.ReadOnly = true;
             this.txtboxContactID.Size = new System.Drawing.Size(513, 45);
             this.txtboxContactID.TabIndex = 23;
             // 
