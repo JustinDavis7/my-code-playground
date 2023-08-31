@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvContactList = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.lblContactID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -88,16 +88,16 @@
             this.lblSearch.TabIndex = 39;
             this.lblSearch.Text = "Search";
             // 
-            // dataGridView1
+            // dgvContactList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(949, 249);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 72;
-            this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 673);
-            this.dataGridView1.TabIndex = 38;
+            this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContactList.Location = new System.Drawing.Point(949, 249);
+            this.dgvContactList.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvContactList.Name = "dgvContactList";
+            this.dgvContactList.RowHeadersWidth = 72;
+            this.dgvContactList.RowTemplate.Height = 37;
+            this.dgvContactList.Size = new System.Drawing.Size(1011, 673);
+            this.dgvContactList.TabIndex = 38;
             // 
             // btnClear
             // 
@@ -304,7 +304,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBoxSearch);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvContactList);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -329,7 +329,7 @@
             this.Text = "Econtact";
             this.Load += new System.EventHandler(this.Econtact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,7 +340,7 @@
         private PictureBox pictureBox1;
         private TextBox txtBoxSearch;
         private Label lblSearch;
-        private DataGridView dataGridView1;
+        private DataGridView dgvContactList;
         private Button btnClear;
         private Button btnDelete;
         private Button btnUpdate;

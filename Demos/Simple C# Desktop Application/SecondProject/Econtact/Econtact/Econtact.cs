@@ -26,18 +26,26 @@ namespace Econtact
 
         private void Econtact_Load(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
-            connection = new SqlConnection(connectionString);
+            //Load Data on Data Gridview
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
 
-            try
-            {
-                connection.Open();
-                // Connection opened successfully, you can perform operations here
-            }
-            catch (Exception ex)
-            {
-                // Handle connection error
-            }
+            /*  
+             *  This is all my own code for moving the connetion of the db to the time when the program starts running. I may or may not
+             *  adjust this so that the program uses a system like I'm used to with connecting the db to code. 
+            */ 
+            //string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            //connection = new SqlConnection(connectionString);
+
+            //try
+            //{
+            //    connection.Open();
+            //    // Connection opened successfully, you can perform operations here
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Handle connection error
+            //}
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -61,6 +69,9 @@ namespace Econtact
                 //Failed to Add Contact
                 MessageBox.Show("Failed to add New Contact. Try Again.");
             }
+            //Load Data on Data Gridview
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
         }
     }
 }
