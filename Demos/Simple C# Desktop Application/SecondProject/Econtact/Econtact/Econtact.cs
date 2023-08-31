@@ -138,5 +138,27 @@ namespace Econtact
             //Call the Clear Method Here
             Clear();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //Get Data from the Textboxes
+            c.ContactID = Convert.ToInt32(txtboxContactID.Text);
+            bool success = c.Delete(c);
+            if (success)
+            {
+                //Delete Successfully
+                MessageBox.Show("Contact Deleted Successfully!");
+                //Load Data on Data Gridview
+                DataTable dt = c.Select();
+                dgvContactList.DataSource = dt;
+                //Call the Clear Method Here
+                Clear();
+            }
+            else
+            {
+                //Failed to Update Contact
+                MessageBox.Show("Failed to Delete Contact. Try Again.");
+            }
+        }
     }
 }
