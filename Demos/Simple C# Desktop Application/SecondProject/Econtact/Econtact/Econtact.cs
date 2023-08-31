@@ -9,14 +9,13 @@ namespace Econtact
     {
         
         private SqlConnection connection;
+        static string myconnstr = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+        contactClass c = new contactClass();
         public Econtact()
         {
             InitializeComponent();
         }
-        contactClass c = new contactClass();
         
-
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtboxFirstName.Text != "" && txtboxLastName.Text != "" && txtboxContactNumber.Text != "" && txtboxAddress.Text != "" && txtboxAddress.Text != "")
@@ -26,7 +25,7 @@ namespace Econtact
                 c.LastName = txtboxLastName.Text;
                 c.ContactNo = txtboxContactNumber.Text;
                 c.Address = txtboxAddress.Text;
-                c.Gender = txtboxAddress.Text;
+                c.Gender = cmbGender.Text;
 
                 //Inserting Data into Database using the method we created in previous episode
                 bool success = c.Insert(c);
@@ -51,6 +50,7 @@ namespace Econtact
                 MessageBox.Show("One or more data fields are empty! Please check to make sure you filled out every box except for Contact ID.");
             }
         }
+
         private void Econtact_Load(object sender, EventArgs e)
         {
             //Load Data on Data Gridview
@@ -173,6 +173,18 @@ namespace Econtact
                     MessageBox.Show("Failed to Delete Contact. Try Again.");
                 }
             }
+        }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Get the balue from text box
+            string keyword = txtBoxSearch.Text;
+
+            SqlConnection conn = new SqlConnection(myconnstr);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM tbl_contact WHERE FirstName LIKE '%"+keyword+"%' OR LastName LIKE '%"+keyword+"%' OR Address LIKE '%"+keyword+"%'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvContactList.DataSource = dt;
         }
     }
 }
