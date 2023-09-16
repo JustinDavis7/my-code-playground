@@ -1,4 +1,8 @@
 using Raffler.rafflerClasses;
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
+
 namespace Raffler
 {
     public partial class Form1 : Form
@@ -51,7 +55,11 @@ namespace Raffler
                         message += item + "\r\n";
                     }
                     message += "\r\nWhen you close this box, a web page will open up with the winners so you can print out the results.";
-                    MessageBox.Show(message); 
+                    MessageBox.Show(message);
+
+                    // After showing the message box, open the HTML page with winners
+                    string htmlFilePath = Path.Combine(Application.StartupPath, "Data", "random_names.html");
+                    System.Diagnostics.Process.Start(htmlFilePath);
                 }
                 else
                 {
@@ -66,7 +74,6 @@ namespace Raffler
                         MessageBox.Show("You want more winners than the number of names you put in!");
                     }
                 }
-
             }
             else
             {
