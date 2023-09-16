@@ -35,7 +35,7 @@ namespace Raffler
             string[] names = txtBoxNames.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
             // Checking to make sure there are actually names to work on
-            if(names.Length == 0)
+            if(names.Length != 0)
             {
                 // Grab the number of names to select from the list
                 int winnersCount = (int) numUpDownPicker.Value;
