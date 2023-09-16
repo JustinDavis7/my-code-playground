@@ -125,7 +125,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxNames);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Random Name Picker";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownPicker)).EndInit();
             this.ResumeLayout(false);
