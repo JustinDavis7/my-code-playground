@@ -1,5 +1,6 @@
 using Raffler.rafflerClasses;
 using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -58,8 +59,24 @@ namespace Raffler
                     MessageBox.Show(message);
 
                     // After showing the message box, open the HTML page with winners
-                    string htmlFilePath = Path.Combine(Application.StartupPath, "Data", "random_names.html");
-                    System.Diagnostics.Process.Start(htmlFilePath);
+                    string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    string fullPath = Path.Combine(appDirectory, "Data", "Winners.html");
+                    string partToRemove = "\\bin\\Debug\\net7.0-windows";
+                    string modifiedPath = fullPath.Replace(partToRemove, "");
+
+                    if (File.Exists(modifiedPath))
+                    {
+                        // Open the HTML file in the default web browser
+                        System.Diagnostics.Process.Start(new ProcessStartInfo
+                        {
+                            FileName = modifiedPath,
+                            UseShellExecute = true
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("The HTML file does not exist.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
