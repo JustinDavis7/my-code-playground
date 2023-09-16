@@ -69,7 +69,6 @@
             this.btnRun.TabIndex = 2;
             this.btnRun.Text = "Run Picker\r\n";
             this.btnRun.UseVisualStyleBackColor = false;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // label2
             // 
@@ -88,9 +87,19 @@
             // 
             this.numUpDownPicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numUpDownPicker.Location = new System.Drawing.Point(924, 198);
+            this.numUpDownPicker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numUpDownPicker.Name = "numUpDownPicker";
             this.numUpDownPicker.Size = new System.Drawing.Size(210, 45);
             this.numUpDownPicker.TabIndex = 4;
+            this.numUpDownPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
