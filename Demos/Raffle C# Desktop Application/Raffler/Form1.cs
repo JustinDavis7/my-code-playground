@@ -34,8 +34,20 @@ namespace Raffler
             // Split the text from the TextBox into an array of strings.
             string[] names = txtBoxNames.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-            // Pass the names to the Raffler class.
-            raffler.PickWinners(names);
+            // Checking to make sure there are actually names to work on
+            if(names.Length == 0)
+            {
+                // Grab the number of names to select from the list
+                int winnersCount = (int) numUpDownPicker.Value;
+
+                // Pass the names to the Raffler class.
+                raffler.PickWinners(names);
+            }
+            else
+            {
+                // User didn't input any names into the box
+                MessageBox.Show("You need to enter names before a winner can be picked!");
+            }  
         }
     }
 }
