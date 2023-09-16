@@ -69,6 +69,7 @@
             this.btnRun.TabIndex = 2;
             this.btnRun.Text = "Run Picker\r\n";
             this.btnRun.UseVisualStyleBackColor = false;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // label2
             // 

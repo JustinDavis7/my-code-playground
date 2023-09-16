@@ -1,3 +1,4 @@
+using Raffler.rafflerClasses;
 namespace Raffler
 {
     public partial class Form1 : Form
@@ -23,6 +24,18 @@ namespace Raffler
         {
             // Update the width of txtBoxNames to be 45% of the form's width, but not more than 500 pixels.
             txtBoxNames.Width = Math.Min(this.ClientSize.Width * 45 / 100, txtBoxNames.MaximumSize.Width);
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            // Assume Raffler is your class and it has a method called SetNames that takes a string array.
+            rafflerClass raffler = new rafflerClass();
+
+            // Split the text from the TextBox into an array of strings.
+            string[] names = txtBoxNames.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+            // Pass the names to the Raffler class.
+            raffler.PickWinners(names);
         }
     }
 }
