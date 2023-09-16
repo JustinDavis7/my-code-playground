@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnRun = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.numUpDownPicker = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownPicker)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxNames
@@ -66,6 +69,7 @@
             this.btnRun.TabIndex = 2;
             this.btnRun.Text = "Run Picker\r\n";
             this.btnRun.UseVisualStyleBackColor = false;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // label2
             // 
@@ -80,11 +84,31 @@
             this.label2.Text = "Random Name Picker";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // numUpDownPicker
+            // 
+            this.numUpDownPicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numUpDownPicker.Location = new System.Drawing.Point(924, 198);
+            this.numUpDownPicker.Name = "numUpDownPicker";
+            this.numUpDownPicker.Size = new System.Drawing.Size(210, 45);
+            this.numUpDownPicker.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(924, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(335, 38);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Number of Names Picked";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1611, 773);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numUpDownPicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.label1);
@@ -92,6 +116,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Resize += new System.EventHandler(this.Form1_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownPicker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +128,7 @@
         private Label label1;
         private Button btnRun;
         private Label label2;
+        private NumericUpDown numUpDownPicker;
+        private Label label3;
     }
 }
