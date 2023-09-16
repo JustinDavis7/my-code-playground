@@ -1,0 +1,23 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+ul#winners {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#winners li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    width: 200px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
