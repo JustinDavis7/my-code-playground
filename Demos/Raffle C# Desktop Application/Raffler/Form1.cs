@@ -45,11 +45,12 @@ namespace Raffler
                     // Pass the names to the Raffler class.
                     string[] winners = raffler.PickWinners(names, winnersCount);
 
-                    string message = "";
+                    string message = "Winners: \r\n";
                     foreach(string item in winners)
                     {
                         message += item + "\r\n";
                     }
+                    message += "\r\nWhen you close this box, a web page will open up with the winners so you can print out the results.";
                     MessageBox.Show(message); 
                 }
                 else
