@@ -40,15 +40,32 @@ namespace Raffler
                 // Grab the number of names to select from the list
                 int winnersCount = (int) numUpDownPicker.Value;
 
-                // Pass the names to the Raffler class.
-                string[] winners = raffler.PickWinners(names, winnersCount);
-
-                string message = "";
-                foreach(string item in winners)
+                if(names.Length > winnersCount)
                 {
-                    message += item + "\r\n";
+                    // Pass the names to the Raffler class.
+                    string[] winners = raffler.PickWinners(names, winnersCount);
+
+                    string message = "";
+                    foreach(string item in winners)
+                    {
+                        message += item + "\r\n";
+                    }
+                    MessageBox.Show(message); 
                 }
-                MessageBox.Show(message);
+                else
+                {
+                    if (names.Length == winnersCount)
+                    {
+                        // User picked the same number of winners as names input which doesn't make sense
+                        MessageBox.Show("You picked the same number of winners as contestants, that doesn't seem right does it?");
+                    }
+                    else
+                    {
+                        // User picked too high of a number of winners
+                        MessageBox.Show("You want more winners than the number of names you put in!");
+                    }
+                }
+
             }
             else
             {
