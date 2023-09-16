@@ -1,0 +1,7 @@
+# About this program
+&ensp;&ensp;This is just a simple random name/raffle program I built. The reason I made it is actually because of my father. In his business, he handles the random name drawings for things such as raffles for events or prizes during holidays, and random screening that his company has to do. 
+
+&ensp;&ensp;In the past, he has used several different fully web-based offerings, but never really liked 100% of any of them. Various issues would pop up after a few months of using it thanks to a weird change, or the program would simply seize to exist at all for some unknown reason. One program would make a nice clean display, while another would allow him to print out the results but it didn’t look nice. None of them ever seemed to work just right for him. So, I figured I would take this chance to learn how to make a simple Windows Forms App to try and create something he could/would like. 
+
+&ensp;&ensp;You can either type in a list of names manually, just hitting enter after each name, or, as in his case, copy a list of names from an excel spread sheet and past them into the text box. Then you can select the number of _winners_ you want, and then click a button to run/generate an **HTML** page with the _winners_. I chose to do it this way so that it would be simple for anyone to access the printing necessity that was stressed to me, and thought it would be the most straight forward way to implement it.
+
