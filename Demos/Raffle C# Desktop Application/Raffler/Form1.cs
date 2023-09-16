@@ -49,5 +49,12 @@ namespace Raffler
                 MessageBox.Show("You need to enter names before a winner can be picked!");
             }  
         }
+
+        private void txtBoxNames_Resize(object sender, EventArgs e)
+        {
+            // Update the location of numUpDown and lblNames to be to the right of txtBoxNames.
+            numUpDownPicker.Left = txtBoxNames.Right + 10;
+            lblNumberPicker.Left = txtBoxNames.Right + 10;
+        }
     }
 }

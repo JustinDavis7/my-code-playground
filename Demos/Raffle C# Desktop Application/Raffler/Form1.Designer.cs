@@ -33,7 +33,7 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numUpDownPicker = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblNumberPicker = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownPicker)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +46,7 @@
             this.txtBoxNames.Name = "txtBoxNames";
             this.txtBoxNames.Size = new System.Drawing.Size(716, 350);
             this.txtBoxNames.TabIndex = 0;
+            this.txtBoxNames.Resize += new System.EventHandler(this.txtBoxNames_Resize);
             // 
             // label1
             // 
@@ -102,22 +103,22 @@
             0,
             0});
             // 
-            // label3
+            // lblNumberPicker
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(924, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(335, 38);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Number of Names Picked";
+            this.lblNumberPicker.AutoSize = true;
+            this.lblNumberPicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNumberPicker.Location = new System.Drawing.Point(924, 130);
+            this.lblNumberPicker.Name = "lblNumberPicker";
+            this.lblNumberPicker.Size = new System.Drawing.Size(335, 38);
+            this.lblNumberPicker.TabIndex = 5;
+            this.lblNumberPicker.Text = "Number of Names Picked";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1611, 773);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblNumberPicker);
             this.Controls.Add(this.numUpDownPicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRun);
@@ -139,6 +140,6 @@
         private Button btnRun;
         private Label label2;
         private NumericUpDown numUpDownPicker;
-        private Label label3;
+        private Label lblNumberPicker;
     }
 }
