@@ -41,7 +41,7 @@ namespace Raffler
                 int winnersCount = (int) numUpDownPicker.Value;
 
                 // Pass the names to the Raffler class.
-                raffler.PickWinners(names);
+                string[] winners = raffler.PickWinners(names, winnersCount);
             }
             else
             {

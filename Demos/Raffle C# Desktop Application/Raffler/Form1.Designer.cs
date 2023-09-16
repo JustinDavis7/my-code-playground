@@ -117,13 +117,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1611, 773);
+            this.ClientSize = new System.Drawing.Size(1611, 736);
             this.Controls.Add(this.lblNumberPicker);
             this.Controls.Add(this.numUpDownPicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxNames);
+            this.MaximumSize = new System.Drawing.Size(2000, 800);
             this.Name = "Form1";
             this.Text = "Random Name Picker";
             this.Resize += new System.EventHandler(this.Form1_Resize);
