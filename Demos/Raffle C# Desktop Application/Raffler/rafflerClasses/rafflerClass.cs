@@ -13,7 +13,7 @@ namespace Raffler.rafflerClasses
         public string[] winners { get; set; }
 
         //Getting the names from the list
-        public string[] PickWinners(string[] allNames, int winnersCount)
+        public List<string> PickWinners(string[] allNames, int winnersCount)
         {
             Random random = new Random();
             string[] shuffledNames = new string[allNames.Length];
@@ -29,8 +29,14 @@ namespace Raffler.rafflerClasses
             }
 
             // Take the first winnersCount elements
-            string[] winners = new string[winnersCount];
-            Array.Copy(shuffledNames, winners, winnersCount);
+            List<string> winners = new List<string>();
+            foreach (var name in shuffledNames)
+            {
+                winners.Add(name);
+                if (winners.Count() >= winnersCount)
+                    break;
+            }
+            //Array.Copy(shuffledNames, winners, winnersCount);
 
             return winners;
         }

@@ -1,14 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Randomly Selected Names</title>
+    <title>Winners</title>
 </head>
 <body>
-    <h1>Randomly Selected Names</h1>
-    <ul>
-        <li>Name 1</li>
-        <li>Name 2</li>
-        <li>Name 3</li>
+    <h1>Winners</h1>
+    <ul id="winners">
     </ul>
+
+    <script>
+        // Get the winners list from the JSON data
+        var numberOfWinners = "/* Replace with your numberOfWinners */";
+
+        // Get the number of winners from the JSON data
+        var winnersList = "/* Replace with your winnersList */";
+
+        // Get a reference to the <ul> element
+        var ulElement = document.getElementById('winners');
+
+        // Loop through the list of winners and create <li> elements
+        for (var i = 0; i < numberOfWinners; i++) {
+            var liElement = document.createElement('li');
+            liElement.textContent = winnersList[i];
+            ulElement.appendChild(liElement);
+        }
+    </script>
 </body>
 </html>

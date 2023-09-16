@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Raffler
 {
@@ -31,6 +32,14 @@ namespace Raffler
             txtBoxNames.Width = Math.Min(this.ClientSize.Width * 45 / 100, txtBoxNames.MaximumSize.Width);
         }
 
+        
+        // Method to serialize the list of winners to JSON
+        public string SerializeWinners(List<string> winners)
+        {
+            // Serialize the list of winners to JSON
+            return JsonConvert.SerializeObject(winners);
+        }
+
         private void btnRun_Click(object sender, EventArgs e)
         {
             // Assume Raffler is your class and it has a method called SetNames that takes a string array.
@@ -48,7 +57,7 @@ namespace Raffler
                 if(names.Length > winnersCount)
                 {
                     // Pass the names to the Raffler class.
-                    string[] winners = raffler.PickWinners(names, winnersCount);
+                    List<string> winners = raffler.PickWinners(names, winnersCount);
 
                     string message = "Winners: \r\n";
                     foreach(string item in winners)
@@ -58,6 +67,9 @@ namespace Raffler
                     message += "\r\nWhen you close this box, a web page will open up with the winners so you can print out the results.";
                     MessageBox.Show(message);
 
+                    // Serialize the list of winners to JSON
+                    string jsonWinners = SerializeWinners(winners);
+
                     // After showing the message box, open the HTML page with winners
                     string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
                     string fullPath = Path.Combine(appDirectory, "Data", "Winners.html");
@@ -66,11 +78,29 @@ namespace Raffler
 
                     if (File.Exists(modifiedPath))
                     {
-                        // Open the HTML file in the default web browser
+                        // Read the original HTML file content
+                        string originalHtmlContent = File.ReadAllText(modifiedPath);
+
+                        // Replace the numberOfWinners placeholder
+                        string modifiedHtmlContent = originalHtmlContent.Replace("\"/* Replace with your numberOfWinners */\"", $"{winnersCount}");
+
+                        // Replace the winnersList placeholder
+                        modifiedHtmlContent = modifiedHtmlContent.Replace("\"/* Replace with your winnersList */\"", $"{jsonWinners}");
+
+                        // Save the modified HTML content back to the file
+                        File.WriteAllText(modifiedPath, modifiedHtmlContent);
+
+                        // Open the modified HTML file in the default web browser
                         System.Diagnostics.Process.Start(new ProcessStartInfo
                         {
                             FileName = modifiedPath,
                             UseShellExecute = true
+                        });
+
+                        // After a delay (e.g., 5 seconds), restore the original HTML content
+                        Task.Delay(500).ContinueWith(t =>
+                        {
+                            File.WriteAllText(modifiedPath, originalHtmlContent);
                         });
                     }
                     else
