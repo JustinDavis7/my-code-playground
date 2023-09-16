@@ -41,7 +41,7 @@
             this.txtBoxNames.Location = new System.Drawing.Point(92, 197);
             this.txtBoxNames.Multiline = true;
             this.txtBoxNames.Name = "txtBoxNames";
-            this.txtBoxNames.Size = new System.Drawing.Size(771, 359);
+            this.txtBoxNames.Size = new System.Drawing.Size(716, 350);
             this.txtBoxNames.TabIndex = 0;
             // 
             // label1
@@ -75,7 +75,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1531, 85);
+            this.label2.Size = new System.Drawing.Size(1611, 85);
             this.label2.TabIndex = 3;
             this.label2.Text = "Random Name Picker";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1531, 803);
+            this.ClientSize = new System.Drawing.Size(1611, 773);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.label1);
