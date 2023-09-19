@@ -55,8 +55,8 @@
                             <div class="column">
                                 Number of names
                             </div>
-                            <div class="column">
-                                <!-- JavaScript will add number here -->43
+                            <div class="column" id="contestant-count">
+                                <!-- JavaScript will add number here -->
                             </div>
                         </td>
                     </tr>
@@ -70,6 +70,9 @@
 
             // Get the number of winners from the JSON data
             var winnersList = "/* Replace with your winnersList */";
+
+            // Get the number of contestants from the JSON data
+            var contestantCount = "/* Replace with your contestantCount */";
 
             // Get a reference to the <div> element
             var winnerBody = document.getElementById('winner-results');
@@ -94,6 +97,8 @@
                     lastRow.style.borderBottom = 'none';
                 }
             }
+
+            document.getElementById('contestant-count').textContent = contestantCount;
         </script>
     </body>
 </html>

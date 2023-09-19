@@ -40,6 +40,11 @@ namespace Raffler
             return JsonConvert.SerializeObject(winners);
         }
 
+        public string SerializeContestants(int contestants)
+        {
+            return JsonConvert.SerializeObject(contestants);
+        }
+
         private void btnRun_Click(object sender, EventArgs e)
         {
             // Assume Raffler is your class and it has a method called SetNames that takes a string array.
@@ -47,6 +52,7 @@ namespace Raffler
 
             // Split the text from the TextBox into an array of strings.
             string[] names = txtBoxNames.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+            int contestants = names.Length;
 
             // Checking to make sure there are actually names to work on
             if(names.Length != 0)
@@ -70,6 +76,9 @@ namespace Raffler
                     // Serialize the list of winners to JSON
                     string jsonWinners = SerializeWinners(winners);
 
+                    // Serialize the number of contestants to JSON
+                    string jsonContestants = SerializeContestants(contestants);
+
                     // After showing the message box, open the HTML page with winners
                     string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
                     string fullPath = Path.Combine(appDirectory, "Data", "Winners.html");
@@ -86,6 +95,9 @@ namespace Raffler
 
                         // Replace the winnersList placeholder
                         modifiedHtmlContent = modifiedHtmlContent.Replace("\"/* Replace with your winnersList */\"", $"{jsonWinners}");
+
+                        // Replace the contestantsCount placeholer
+                        modifiedHtmlContent = modifiedHtmlContent.Replace("\"/* Replace with your contestantCount */\"", $"{jsonContestants}");
 
                         // Save the modified HTML content back to the file
                         File.WriteAllText(modifiedPath, modifiedHtmlContent);

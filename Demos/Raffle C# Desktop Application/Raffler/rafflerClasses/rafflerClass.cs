@@ -36,7 +36,6 @@ namespace Raffler.rafflerClasses
                 if (winners.Count() >= winnersCount)
                     break;
             }
-            //Array.Copy(shuffledNames, winners, winnersCount);
 
             return winners;
         }
