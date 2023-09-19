@@ -2,22 +2,41 @@
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
-
-h1 {
-    color: #333;
+h1, h2 {
+    text-align: center;
 }
 
-ul#winners {
-    list-style-type: none;
-    padding: 0;
+.winner-results-table-container {
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    border-radius: 10px; /* Add rounded corners to the container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a shadow effect to the container */
 }
 
-ul#winners li {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 2px solid #ddd;
-    background-color: #fff;
-    width: 200px;
-    word-wrap: break-word;
-    box-sizing: border-box;
+/* CSS for the table */
+.winner-results-table {
+    border-collapse: collapse;
+    width: 100%; /* Set the table width to 100% */
+}
+
+/* CSS for table header (th) */
+.winner-results_title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* CSS for table body (td) */
+.winner-results-row {
+    padding: 10px;
+    text-align: center;
+}
+
+tr{
+    text-align: center;
 }
