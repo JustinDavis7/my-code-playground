@@ -33,10 +33,17 @@ h1, h2 {
 
 /* CSS for table body (td) */
 .winner-results-row {
-    padding: 10px;
     text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
 }
 
-tr{
+tr {
+    font-size: 20px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
 }

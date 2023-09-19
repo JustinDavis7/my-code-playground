@@ -42,6 +42,25 @@
                 <tbody id="winner-results">
                     <!-- JavaScript will add rows here -->
                 </tbody>
+                <tfoot>
+                    <tr style="background-color: rgb(0, 119, 255); color: white; font-size: 16px">
+                        <td>
+                            Draw Details
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr style="background-color: rgb(223, 223, 223); text-align: left; font-size: 16px; display: flex; align-items: center;">
+                        <td style="display: flex; justify-content: space-between; width: 100%;">
+                            <div class="column">
+                                Number of names
+                            </div>
+                            <div class="column">
+                                <!-- JavaScript will add number here -->43
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
 
@@ -57,13 +76,23 @@
 
             // Loop through the list of winners and create <tr,td> elements
             for (var i = 0; i < numberOfWinners; i++) {
-                var row = document.createElement('tr'); 
-                var cell = document.createElement('td'); 
+                var row = document.createElement('tr');
+                var cell = document.createElement('td');
 
-                cell.textContent = winnersList[i]; 
+                cell.textContent = winnersList[i];
 
-                row.appendChild(cell); 
-                winnerBody.appendChild(row); 
+                row.appendChild(cell);
+
+                winnerBody.appendChild(row);
+            }
+
+            // Remove the bottom border from the last row
+            var winnerTable = document.querySelector('.winner-results-table');
+            if (winnerTable) {
+                var lastRow = winnerTable.querySelector('tbody tr:last-child');
+                if (lastRow) {
+                    lastRow.style.borderBottom = 'none';
+                }
             }
         </script>
     </body>
