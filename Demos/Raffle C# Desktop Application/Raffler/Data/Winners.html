@@ -42,21 +42,34 @@
                 <tbody id="winner-results">
                     <!-- JavaScript will add rows here -->
                 </tbody>
-                <tfoot>
-                    <tr style="background-color: rgb(0, 119, 255); color: white; font-size: 16px">
-                        <td>
-                            Draw Details
+                <tfoot id="winner-results-foot">
+                    <tr style="background-color: rgb(0, 119, 255); color: white; font-size: 16px; display: flex; align-items: center; padding: 5px;">
+                        <td style="display: block; text-align: center; width: 100%;">
+                            <b>Draw Details</b>
                         </td>
                     </tr>
                     <tr></tr>
                     <tr></tr>
-                    <tr style="background-color: rgb(223, 223, 223); text-align: left; font-size: 16px; display: flex; align-items: center;">
+                    <tr style="background-color: rgb(223, 223, 223); text-align: left; font-size: 16px; display: flex; align-items: center; padding: 5px;">
                         <td style="display: flex; justify-content: space-between; width: 100%;">
-                            <div class="column">
+                            <div>
                                 Number of names
                             </div>
-                            <div class="column" id="contestant-count">
+                            <div id="contestant-count">
                                 <!-- JavaScript will add number here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background-color: rgb(230, 229, 229); text-align: left; font-size: 16px; display: flex; align-items: center; padding: 5px;">
+                        <td style="display: flex; justify-content: space-between; width: 100%;">
+                            <div>
+                                Draw date
+                            </div>
+                            <div id="datetime" style="display: block; text-align: right;>
+                                <!-- JavaScript will add date here -->
+                            </div>
+                            <div id="contestant-count">
+                                <!-- JavaScript will add number of contestants here -->
                             </div>
                         </td>
                     </tr>
@@ -98,7 +111,27 @@
                 }
             }
 
+            // Remove the bottom border from the table foot
+            var winnerTableFoot = document.querySelector('#winner-results-foot'); // Select the tfoot element
+
+            if (winnerTableFoot) {
+                var footerRows = winnerTableFoot.querySelectorAll('tr'); // Select all rows within tfoot
+
+                footerRows.forEach(function (row) {
+                    row.style.borderBottom = 'none'; // Remove the bottom border from each row
+                });
+            }
+
             document.getElementById('contestant-count').textContent = contestantCount;
+
+            // Get the current date and time
+            var currentDatetime = new Date();
+
+            // Format the date and time as a string
+            var formattedDatetime = currentDatetime.toLocaleString();
+
+            // Display the formatted date and time in an HTML element
+            document.getElementById("datetime").textContent = formattedDatetime;
         </script>
     </body>
 </html>
