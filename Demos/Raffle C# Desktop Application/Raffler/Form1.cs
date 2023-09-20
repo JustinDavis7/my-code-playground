@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Raffler
 {
@@ -65,14 +66,6 @@ namespace Raffler
                     // Pass the names to the Raffler class.
                     List<string> winners = raffler.PickWinners(names, winnersCount);
 
-                    string message = "Winners: \r\n";
-                    foreach(string item in winners)
-                    {
-                        message += item + "\r\n";
-                    }
-                    message += "\r\nWhen you close this box, a web page will open up with the winners so you can print out the results.";
-                    MessageBox.Show(message);
-
                     // Serialize the list of winners to JSON
                     string jsonWinners = SerializeWinners(winners);
 
@@ -110,10 +103,12 @@ namespace Raffler
                         });
 
                         // After a delay (e.g., 5 seconds), restore the original HTML content
-                        Task.Delay(500).ContinueWith(t =>
-                        {
-                            File.WriteAllText(modifiedPath, originalHtmlContent);
-                        });
+                        var w = new Form() { Size = new Size(0, 0) };
+                        Task.Delay(TimeSpan.FromSeconds(.5))
+                            .ContinueWith((t) => w.Close(), TaskScheduler.FromCurrentSynchronizationContext());
+
+                        MessageBox.Show(w, "Loading...");
+                        File.WriteAllText(modifiedPath, originalHtmlContent);
                     }
                     else
                     {
