@@ -111,7 +111,12 @@ namespace Raffler
                             UseShellExecute = true
                         });
 
-                        // After a delay (e.g., 5 seconds), restore the original HTML content
+                        /* After a delay (e.g., 5 seconds), restore the original HTML content
+                         * This is creating a temp form that shows up to cause a needed delay between runs.
+                         * If this isn't here, then it's possible to hit the run button too fast, and then the
+                         * html file doesn't get reset and the whole program breaks. There's better ways of handling
+                         * this - create a master copy and then reset using that - but I wanted something simple.
+                         */
                         var w = new Form() { Size = new Size(0, 0) };
                         Task.Delay(TimeSpan.FromSeconds(.5))
                             .ContinueWith((t) => w.Close(), TaskScheduler.FromCurrentSynchronizationContext());
