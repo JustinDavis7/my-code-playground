@@ -53,6 +53,15 @@ namespace Raffler
 
             // Split the text from the TextBox into an array of strings.
             string[] names = txtBoxNames.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+            // Use LINQ to filter out empty strings from the name list
+            List<string> nonEmptyStrings = names
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .ToList();
+
+            // Convert the filtered list back to an array if needed
+            names = nonEmptyStrings.ToArray();
+
             int contestants = names.Length;
 
             // Checking to make sure there are actually names to work on
