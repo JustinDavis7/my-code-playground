@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWPFApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Greetings" Height="450" Width="800">
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,60,0,0"  TextWrapping="Wrap" Text="Select a message option and then choose the Display button." VerticalAlignment="Top"/>
         <RadioButton x:Name="HelloButton" Content="Hello" HorizontalAlignment="Left" Margin="255,0,0,0" VerticalAlignment="Center" IsChecked="True"/>
