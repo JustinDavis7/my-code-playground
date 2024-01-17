@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:Names"
         mc:Ignorable="d"
         Title="Names" Height="180" Width="260">
-    <Grid>
+    <Grid Margin="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>
