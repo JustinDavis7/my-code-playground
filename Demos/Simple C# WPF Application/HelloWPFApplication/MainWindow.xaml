@@ -8,8 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,60,0,0"  TextWrapping="Wrap" Text="Select a message option and then choose the Display button." VerticalAlignment="Top"/>
-        <RadioButton x:Name="HelloButton" Content="Hello" HorizontalAlignment="Left" Margin="238,144,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="GoodbyeButton" Content="Goodbye" HorizontalAlignment="Left" Margin="477,144,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="HelloButton" Content="Hello" HorizontalAlignment="Left" Margin="255,0,0,0" VerticalAlignment="Center" IsChecked="True"/>
+        <RadioButton x:Name="GoodbyeButton" Content="Goodbye" HorizontalAlignment="Left" Margin="494,0,0,0" VerticalAlignment="Center"/>
+        <Button Content="Display" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
