@@ -24,7 +24,7 @@
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
              <!-- This margin behaves like padding in css. If there is a single value, then all of the sides will have the same padding. Left, top, right, bottom. -->
             <TextBox x:Name="txtName"/>
-            <Button x:Name="btnAdd" Margin="0,5,0,0"/>
+            <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click">Add Name</Button>
         </StackPanel>
 
     </Grid>
