@@ -22,4 +22,4 @@
 ## Data Binding Using WPF Designer
 &ensp;&ensp;This tutorial is to become more familiar with data binding. Binding is always something that seemed to be problematic for me with MVC projects, so more experience can't hurt. With this project, I'm back to Microsoft for another text based tutorial.This one is available via this link: https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100)
 
-&ensp;&ensp;This one has me creating a Student class, and StudentList collection, and is tracking enrollment of the students. 
+&ensp;&ensp;This one has me creating a Student class, and StudentList collection, and is tracking enrollment of the students. I didn't realize it at first, but this one is in Visual Basic, which I've never used or seen before. It looks familar enough, so we will see how this goes.
