@@ -13,8 +13,8 @@
             <ColumnDefinition Width="663*"/>
         </Grid.ColumnDefinitions>
         <Grid Background="White" Margin="25,40,25,15" Grid.ColumnSpan="2">
-            <TextBox Name="FilterTextBox" Height="30" Width="200" Margin="25" VerticalAlignment="Top"  HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
-            <Button Height="30" Command="{Binding ShowWindowCommand}" Content="Add User" Width="100" VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0"  />
+            <TextBox Name="FilterTextBox" TextChanged="FilterTextBox_OnTextChanged" Height="30" Width="200" Margin="25" VerticalAlignment="Top"  HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            <Button Height="30" CommandParameter="{x:Reference Name= mainWindow}"  Command="{Binding ShowWindowCommand}" Content="Add User" Width="100" VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0"  />
             <ListView Name="UserList" ItemsSource="{Binding Users}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0">
                 <ListView.View>
                     <GridView>

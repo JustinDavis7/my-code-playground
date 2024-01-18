@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using DataBindingAndCommands.Commands;
 using DataBindingAndCommands.Models;
@@ -31,7 +32,10 @@ namespace DataBindingAndCommands.ViewModel
 
         private void ShowWindow(object obj)
         {
+            var mainWindow = obj as Window;
             AddUser addUserWin = new AddUser();
+            addUserWin.Owner = mainWindow;
+            addUserWin.WindowStartupLocation = WindowStartupLocation.CenterOwner; // This makes the secondary popup window center itself on the main program window no matter where it is.
             addUserWin.Show();
         }
     }
