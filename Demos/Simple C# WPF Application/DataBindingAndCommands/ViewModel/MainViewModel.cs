@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using DataBindingAndCommands.Commands;
 using DataBindingAndCommands.Models;
-using Record_Book_MVVM.Views;
+using DataBindingAndCommands.Views;
 
 namespace DataBindingAndCommands.ViewModel
 {
