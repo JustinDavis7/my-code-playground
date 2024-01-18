@@ -28,6 +28,6 @@
 
     </Window.Resources>
     <Grid>
-        <ListBox av:ItemsSource="{av:SampleData ItemCount=5}" ItemsSource="{Binding Mode=OneWay, Source={StaticResource studentCollection}}"/>
+        <ListBox av:ItemsSource="{av:SampleData ItemCount=5}" ItemsSource="{Binding Mode=OneWay, Source={StaticResource studentCollection}}" ItemTemplate="{DynamicResource listBoxTemplate}"/>
     </Grid>
 </Window>
