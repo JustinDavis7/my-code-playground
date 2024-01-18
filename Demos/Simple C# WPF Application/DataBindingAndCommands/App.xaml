@@ -1,7 +1,7 @@
-﻿ ﻿<Application x:Class="Record_Book_MVVM.App"
+﻿<Application x:Class="DataBindingAndCommands.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Record_Book_MVVM"
+             xmlns:local="clr-namespace:DataBindingAndCommands"
              StartupUri="Views/Main.xaml">
     <Application.Resources>
         <Style TargetType="{x:Type ListViewItem}">
