@@ -9,7 +9,7 @@
     <Grid Margin="10">
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -17,5 +17,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+        <Label>Names</Label>
+        <ListBox Grid.Row="1" x:Name="lstNames"></ListBox>
+
     </Grid>
 </Window>
