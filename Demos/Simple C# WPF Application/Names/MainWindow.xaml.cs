@@ -25,7 +25,7 @@ namespace Names
         {
             if (!string.IsNullOrWhiteSpace(txtName.Text) && !lstNames.Items.Contains(txtName.Text))
             {
-                lstNames.Items.Add(txtName.txt);
+                lstNames.Items.Add(txtName.Text);
                 txtName.Clear();
             }
         }
