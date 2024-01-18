@@ -9,7 +9,7 @@
         Name="mainwindow">
     <Grid Background="#F5F5F5">
         <Grid Background="White" Grid.Row="1" Margin="25,40,25,15">
-            <TextBox Name="FilterTextBox" TextChanged="FilterTextBox_OnTextChanged" Height="30" Width="200" Margin="25" VerticalAlignment="Top"  HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            <TextBox Name="FilterTextBox" TextChanged="FilterTextBox_TextChanged" Height="30" Width="200" Margin="25" VerticalAlignment="Top"  HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
             <Button Height="30" Content="Add User" Width="100" VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0"  />
             <ListView Name="UserList" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0">
                 <ListView.View>
