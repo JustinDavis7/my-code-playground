@@ -12,5 +12,14 @@
 
 &ensp;&ensp;This tutorial is using a system that I am all too familiar with, the Model, View, Controller framework or MVC, but is a little different since it has no controller. This is called the MVVM pattern, making use of Models, Views, and ViewModels. I've used all three of those many times before, so this isn't a new concept to me and should prove to be fairly easy to use.
 
+### AFTER THOUGHTS
+&ensp;&ensp;This project is very good, and shows several things I had yet to see. With that being said, the video starts off in a semi-complete state. There's many files that are already written, and even with copy/pasting those files into my project, I still ran into a pretty big issue where the source files had typos and the child window just wouldn't show up. When you click the ADD button, a smaller window is supposed to pop up so you can type in a new entry. In the video, this just works, but in practice, that window doesn't seem to be used. I had to watch the video and go along with several steps after the creator showed the adding window working before it actually began to work for me. 
+
+&ensp;&ensp;I would have liked if the video creator at least showed the files that they were starting with and talked about them a little. In the very least, providing a starting point repo would have been idea as well, since it wasn't shown how several files were made in the video, but things such as bindings were added in the video to the already formed files. I had to remove the bindings from the files initially so that I could go along with the video.
+
+&ensp;&ensp;All-in-all, not a bad program to make. It showed me bindings, ObservableCollections, grids, and several other useful pieces.
+
 ## Data Binding Using WPF Designer
 &ensp;&ensp;This tutorial is to become more familiar with data binding. Binding is always something that seemed to be problematic for me with MVC projects, so more experience can't hurt. With this project, I'm back to Microsoft for another text based tutorial.This one is available via this link: https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100)
+
+&ensp;&ensp;This one has me creating a Student class, and StudentList collection, and is tracking enrollment of the students. 
