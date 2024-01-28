@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ModernDesignDemo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <!-- Added the ResourceDictionary so that the custom theme can be used-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Theme/MenuButtonTheme.xaml"/>
