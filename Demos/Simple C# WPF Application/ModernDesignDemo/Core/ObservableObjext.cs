@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ModernDesignDemo.Core
 {
-    class ObservableObjext : INotifyPropertyChanged
+    class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
