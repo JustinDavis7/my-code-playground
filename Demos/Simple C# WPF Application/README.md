@@ -26,3 +26,6 @@
 
 ### AFTER THOUGHTS
 &ensp;&ensp;Ok so this was a waste of time. It's not as much a tutorial as, copy and paste to see it happen. I was hoping it would actually have some more info or tips, but there's almost nothing to this. The previous two Microsoft tutorials were much better... this is dissapointing.
+
+## Modern Desing Demo
+&ensp;&ensp;This tutorial helped me learn a few new ways of displaying content in a WPF/Xaml project. It show cased adjusting the view in a single window - which is something I wish I had found earlier - when a user clicks on a tab/radio button on the side of the window. It's fairly simple, with little actual use in this example but it showed me the basics of setting up something dynamic which is useful. I also got to see how to add photos, fonts, and a bit more experience with binding. The video was very fast, and most of the intricate things are glassed over, but I feel like I understood enough of what was shown to say I could replecate it if I needed/wanted to for something else. The video I followed is available at this link: https://www.youtube.com/watch?v=PzP8mw7JUzI
