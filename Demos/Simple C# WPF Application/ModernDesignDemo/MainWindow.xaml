@@ -33,7 +33,8 @@
                        HorizontalAlignment="Left" 
                        Foreground="White" 
                        FontSize="22"
-                       Margin="20,0,0,0"/>
+                       Margin="20,0,0,0"
+                       FontFamily="/Fonts/#Poppins"/>
 
             <StackPanel Grid.Row="1">
 
