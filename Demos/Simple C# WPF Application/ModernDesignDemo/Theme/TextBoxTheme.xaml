@@ -8,7 +8,6 @@
                     <Border CornerRadius="10"
                             Background="#353340"
                             Width="200" Height="40">
-    
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
                             <TextBox Margin="1"
@@ -31,6 +30,7 @@
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
+                                            <!-- This binding makes it to where the default text appears and disappears if you are typing in the search box.-->
                                             <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"></Setter>
                                             </DataTrigger>
