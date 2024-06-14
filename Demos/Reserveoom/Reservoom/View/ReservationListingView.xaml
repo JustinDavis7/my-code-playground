@@ -24,11 +24,11 @@
                 Style="{StaticResource Header}"/>
                 <!-- This is using the style made in the App.xaml for Header. -->
 
-            <Button 
-                Content="Make Reservation" 
-                Grid.Column="1" 
+            <Button
+                Grid.Column="1"
                 Margin="10 0 0 0"
-                Command="{Binding MakeReservationCommand}"/>
+                Command="{Binding MakeReservationCommand}"
+                Content="Make Reservation" />
         </Grid>
 
         <ListView Grid.Row="1" 

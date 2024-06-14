@@ -1,5 +1,6 @@
 ﻿using Reservoom.Exceptions;
 using Reservoom.Models;
+using Reservoom.Services;
 using Reservoom.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,24 +16,23 @@ namespace Reservoom.Commands
     {
         private readonly MakeReservationViewModel _makeReservationViewModel;
         private readonly Hotel _hotel;
+        private readonly NavigationService _reservationViewNavigationService;
 
-        public MakeReservationCommand(ViewModels.MakeReservationViewModel makeReservationViewModel, Hotel hotel)
+        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel, Hotel hotel, NavigationService reservationViewNavigationService)
         {
             _makeReservationViewModel = makeReservationViewModel;
             _hotel = hotel;
-
+            _reservationViewNavigationService = reservationViewNavigationService;
             _makeReservationViewModel.PropertyChanged += OnViewModelPropertyChanged; // Need to do this so that the submit button can be active again.
         }
 
-        
-
-        public override bool CanExecute(object? parameter) // Doing this makes the Submit button greyed out and unclickable until something is in the name box.
+        public override bool CanExecute(object parameter) // Doing this makes the Submit button greyed out and unclickable until something is in the name box.
         {
             return !string.IsNullOrEmpty(_makeReservationViewModel.Username) && 
                 _makeReservationViewModel.FloorNumber > 0 &&
                 base.CanExecute(parameter);
         }
-        public override void Execute(object? parameter)
+        public override void Execute(object parameter)
         {
             Reservation reservation = new Reservation(
                 new RoomID(_makeReservationViewModel.FloorNumber, _makeReservationViewModel.RoomNumber),
@@ -44,6 +44,8 @@ namespace Reservoom.Commands
             {
                 _hotel.MakeReservation(reservation); 
                 MessageBox.Show("Succesfully reserved room.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                _reservationViewNavigationService.Navigate();
             }
             catch (ReservationConflictException)
             {
