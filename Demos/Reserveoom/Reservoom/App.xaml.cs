@@ -26,7 +26,7 @@ namespace Reservoom
                 new DateTime(2000, 1, 3),
                 new DateTime(2000, 1, 4)));
 
-            IEnumerable<Reservation> reservations = hotel.GetReservationForUser("Singleton");
+            IEnumerable<Reservation> reservations = hotel.GetAllReservations();
 
             base.OnStartup(e);
         }
