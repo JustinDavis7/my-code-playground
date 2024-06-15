@@ -12,7 +12,6 @@ namespace Reservoom.Models
         public string UserName { get; }
         public DateTime StartTime { get; }
         public DateTime EndTime { get; }
-
         public TimeSpan Length => EndTime.Subtract(StartTime);
 
         public Reservation(RoomID roomID, string username, DateTime startTime, DateTime endTime)

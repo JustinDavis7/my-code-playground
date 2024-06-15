@@ -8,8 +8,6 @@ namespace Reservoom.Models
 {
     public class RoomID
     {
-
-
         public int FloorNumber { get; }
         public int RoomNumber { get; }
 
